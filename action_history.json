@@ -1,0 +1,940 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2025-05-20T02:57:08.440182Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=\"192.168.0.27\"]",
+        "/queue simple remove [find target=\"192.168.0.27/32\"]",
+        "/queue simple add name=\"192.168.0.27\" target=\"192.168.0.27\" max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=\"Test\""
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=\"192.168.0.27\"]",
+        "/queue simple remove [find target=\"192.168.0.27/32\"]",
+        "/queue simple add name=\"192.168.0.27\" target=\"192.168.0.27\" max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=\"Test\"",
+        "/ip dhcp-server lease set [find address=\"192.168.0.27\"] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "timestamp": "2025-05-20T04:07:31.700274Z",
+    "action": "add_static_queue",
+    "details": {
+      "name": "dhcp-ds<8C:EA:48:05:B9:16>",
+      "target": "192.168.0.26",
+      "lease_rate": "\"10024k/10024k\"",
+      "limit_at": "1600k/6200k",
+      "cmds_executed": [
+        "/queue simple add name=\"192.168.0.26\" target=\"192.168.0.26\" max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=\"192.168.0.26\"]",
+        "/queue simple remove [find target=\"192.168.0.26/32\"]",
+        "/ip dhcp-server lease set [find address=\"192.168.0.26\"] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "timestamp": "2025-05-21T17:42:41.370431Z",
+    "action": "add_static_queue",
+    "details": {
+      "name": "dhcp-ds<8C:EA:48:05:B9:16>",
+      "target": "192.168.0.26",
+      "lease_rate": "\"10024k/10024k\"",
+      "limit_at": "1600k/6200k",
+      "cmds_executed": [
+        "/queue simple add name=\"192.168.0.26\" target=\"192.168.0.26\" max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=\"192.168.0.26\"]",
+        "/queue simple remove [find target=\"192.168.0.26/32\"]",
+        "/ip dhcp-server lease set [find address=\"192.168.0.26\"] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "timestamp": "2025-05-21T17:43:45.939044Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=\"192.168.0.27\"]",
+        "/queue simple remove [find target=\"192.168.0.27/32\"]",
+        "/queue simple add name=\"192.168.0.27\" target=\"192.168.0.27\" max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=\"Test\""
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=\"192.168.0.27\"]",
+        "/queue simple remove [find target=\"192.168.0.27/32\"]",
+        "/queue simple add name=\"192.168.0.27\" target=\"192.168.0.27\" max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=\"Test\"",
+        "/ip dhcp-server lease set [find address=\"192.168.0.27\"] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "timestamp": "2025-05-21T17:43:49.628934Z",
+    "action": "add_static_queue",
+    "details": {
+      "name": "dhcp-ds<54:44:A3:56:42:24>",
+      "target": "192.168.0.25",
+      "lease_rate": "\"10024k/10024k\"",
+      "limit_at": "1600k/6200k",
+      "cmds_executed": [
+        "/queue simple add name=\"192.168.0.25\" target=\"192.168.0.25\" max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=\"192.168.0.25\"]",
+        "/queue simple remove [find target=\"192.168.0.25/32\"]",
+        "/ip dhcp-server lease set [find address=\"192.168.0.25\"] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "timestamp": "2025-05-21T23:01:33.759102Z",
+    "action": "cancel_conversion",
+    "details": {
+      "name": "dhcp-ds<8C:EA:48:05:E5:E4>",
+      "target": "192.168.0.27",
+      "lease_rate": "\"10024k/10024k\""
+    }
+  },
+  {
+    "id": 7,
+    "timestamp": "2025-05-31T09:38:02.773245Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=0/0 queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 8,
+    "timestamp": "2025-05-31T09:54:08.434462Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=0/0 queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 9,
+    "timestamp": "2025-06-04T07:39:50.673370Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=0/0 queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 10,
+    "timestamp": "2025-06-04T08:47:59.101181Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=0/0 queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 11,
+    "timestamp": "2025-06-04T09:17:40.450054Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=0/0 queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 12,
+    "timestamp": "2025-06-04T09:24:04.537120Z",
+    "action": "cancel_conversion",
+    "details": {
+      "name": "192.168.0.27",
+      "target": "192.168.0.27",
+      "lease_rate": "\"10024k/10024k\""
+    }
+  },
+  {
+    "id": 13,
+    "timestamp": "2025-06-04T11:15:17.030821Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 14,
+    "timestamp": "2025-06-05T01:29:07.498357Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "10024k/10024k",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=10024k/10024k limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=10024k/10024k"
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "timestamp": "2025-06-05T07:27:13.115961Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "10024k/10024k",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=10024k/10024k limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=10024k/10024k"
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "timestamp": "2025-06-05T07:29:24.377765Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "10024k/10024k",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=10024k/10024k limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=10024k/10024k"
+      ]
+    }
+  },
+  {
+    "id": 17,
+    "timestamp": "2025-06-05T17:12:07.528691Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "10024k/10024k",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=10024k/10024k limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=10024k/10024k"
+      ]
+    }
+  },
+  {
+    "id": 18,
+    "timestamp": "2025-06-05T17:14:52.587522Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "10024k/10024k",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=10024k/10024k limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=10024k/10024k"
+      ]
+    }
+  },
+  {
+    "id": 19,
+    "timestamp": "2025-06-05T23:52:38.299430Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "10024k/10024k",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=10024k/10024k limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=10024k/10024k"
+      ]
+    }
+  },
+  {
+    "id": 20,
+    "timestamp": "2025-06-05T23:54:13.356239Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "10024k/10024k",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=10024k/10024k limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=10024k/10024k"
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "timestamp": "2025-06-06T01:20:53.992837Z",
+    "action": "remove_rate_limit",
+    "details": {
+      "target": "192.168.0.27",
+      "lease_rate": "10024k/10024k",
+      "cmds_executed": [],
+      "inverse_cmds": [
+        "/ip dhcp-server lease set [find address=\"192.168.0.27\"] rate-limit=10024k/10024k"
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "timestamp": "2025-06-06T01:21:31.603318Z",
+    "action": "remove_rate_limit",
+    "details": {
+      "target": "192.168.0.27",
+      "lease_rate": "10024k/10024k",
+      "cmds_executed": [],
+      "inverse_cmds": [
+        "/ip dhcp-server lease set [find address=\"192.168.0.27\"] rate-limit=10024k/10024k"
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "timestamp": "2025-06-06T02:52:58.676940Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "timestamp": "2025-06-06T04:57:34.526070Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 25,
+    "timestamp": "2025-06-06T06:21:24.254641Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 26,
+    "timestamp": "2025-06-06T07:17:15.002918Z",
+    "action": "cancel_conversion",
+    "details": {
+      "name": "192.168.0.27",
+      "target": "192.168.0.27",
+      "lease_rate": "\"10024k/10024k\""
+    }
+  },
+  {
+    "id": 27,
+    "timestamp": "2025-06-06T07:43:41.634366Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "10024k/10024k",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=10024k/10024k limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=10024k/10024k"
+      ]
+    }
+  },
+  {
+    "id": 28,
+    "timestamp": "2025-06-06T08:10:14.429552Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 29,
+    "timestamp": "2025-06-06T08:23:53.166690Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 30,
+    "timestamp": "2025-06-06T09:26:21.626290Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 31,
+    "timestamp": "2025-06-06T09:28:34.957563Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 32,
+    "timestamp": "2025-06-07T04:17:07.168223Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 33,
+    "timestamp": "2025-06-07T04:25:13.958754Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 34,
+    "timestamp": "2025-06-07T04:29:09.649065Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 35,
+    "timestamp": "2025-06-07T04:35:10.498947Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 36,
+    "timestamp": "2025-06-07T04:39:54.790087Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 37,
+    "timestamp": "2025-06-07T07:35:05.940197Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 38,
+    "timestamp": "2025-06-07T08:42:30.988009Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 39,
+    "timestamp": "2025-06-11T00:17:02.319796Z",
+    "action": "overwrite_queue",
+    "details": {
+      "existing": {
+        "name": "192.168.0.27",
+        "target": "192.168.0.27",
+        "max": "0/0",
+        "limit_at": "0/0",
+        "comment": "Test"
+      },
+      "new_lease": "\"10024k/10024k\"",
+      "cmds_executed": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=\"10024k/10024k\" limit-at=1600k/6200k queue=default-small/default-small comment=Test"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=192.168.0.27]",
+        "/queue simple remove [find target=192.168.0.27/32]",
+        "/queue simple add name=192.168.0.27 target=192.168.0.27 max-limit=0/0 limit-at=0/0 queue=default-small/default-small comment=Test",
+        "/ip dhcp-server lease set [find address=192.168.0.27] rate-limit=\"10024k/10024k\""
+      ]
+    }
+  },
+  {
+    "id": 40,
+    "timestamp": "2025-06-11T21:01:31.640491Z",
+    "action": "add_static_queue",
+    "details": {
+      "name": "209.218.209.162",
+      "target": "209.218.209.162",
+      "lease_rate": "\"2100k/8300k\"",
+      "limit_at": "1600k/6200k",
+      "cmds_executed": [
+        "/queue simple add name=209.218.209.162 target=209.218.209.162 max-limit=\"2100k/8300k\" limit-at=1600k/6200k queue=default-small/default-small"
+      ],
+      "inverse_cmds": [
+        "/queue simple remove [find name=209.218.209.162]",
+        "/queue simple remove [find target=209.218.209.162/32]",
+        "/ip dhcp-server lease set [find address=209.218.209.162] rate-limit=\"2100k/8300k\""
+      ]
+    }
+  }
+]

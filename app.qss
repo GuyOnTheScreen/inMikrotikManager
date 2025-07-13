@@ -1,0 +1,9 @@
+# widgets/app.qss
+
+QWidget {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 10pt;
+}
+QLineEdit, QPushButton {
+    padding: 5px;
+}

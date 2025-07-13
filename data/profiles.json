@@ -1,0 +1,26 @@
+{
+  "default": "testing",
+  "profiles": {
+    "demo": {
+      "host": "127.0.0.1",
+      "port": 2222,
+      "user": "demo",
+      "password": "demo",
+      "note": "Loop-back profile used only by automated tests"
+    },
+    "legacy": {
+      "host": "192.168.88.1",
+      "port": 22,
+      "user": "admin",
+      "password": "",
+      "note": "Default MikroTik creds"
+    },
+    "testing": {
+      "host": "192.168.0.1",
+      "port": 22,
+      "user": "Temp",
+      "password": "TempPassword123",
+      "note": "Testing host"
+    }
+  }
+}

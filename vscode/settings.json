@@ -1,0 +1,11 @@
+{
+    // Extra search paths for Pylance / IntelliSense
+    "python.analysis.extraPaths": [
+      "./",          // project root
+      "./core",
+      "./utils",
+      "./widgets",
+      "./ui"
+    ]
+  }
+  
