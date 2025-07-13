@@ -1,13 +1,3 @@
-# core/client.py
-"""
-MikrotikClient – thin Paramiko wrapper with optional profile storage.
-
-New in this revision
---------------------
-• Added .cmd()  – legacy helper so older controllers that expect
-  `cli.cmd("/path print")` keep working.
-• __enter__/__exit__ remain unchanged so you can use `with … as cli:`.
-"""
 from __future__ import annotations
 
 import json
@@ -15,14 +5,14 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 import paramiko  # pip install paramiko
+import logging
 
-from .log import append
+from .log import append  # Assuming this is your logging helper; keep it if it exists
 
 # ---------- profile helper ----------------------------------------------------
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 PROFILE_FILE = DATA_DIR / "profiles.json"
-
 
 class Profiles:
     """Tiny JSON wrapper for saved connection presets."""
@@ -49,8 +39,44 @@ class Profiles:
     def all(self) -> Dict[str, Dict[str, Any]]:
         return self._cache.copy()
 
+# ---------- Shared SSH Manager (new addition for reuse) -----------------------
+class SSHManager:
+    _instance = None
 
-# ---------- SSH client --------------------------------------------------------
+    @classmethod
+    def get_instance(cls, host: str, port: int, username: str, password: str):
+        """Get the shared SSH connection. Creates it if it doesn't exist."""
+        if cls._instance is None:
+            try:
+                client = paramiko.SSHClient()
+                client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+                client.connect(
+                    hostname=host,
+                    port=port,
+                    username=username,
+                    password=password,
+                    timeout=10,  # Added to avoid hangs
+                    look_for_keys=False,
+                    allow_agent=False
+                )
+                cls._instance = client
+                logging.info(f"SSH connection established to {host}:{port}")
+                append(f"LOGIN {host}:{port}")  # Your legacy logging
+            except Exception as e:
+                logging.error(f"Failed to connect: {e}")
+                raise
+        return cls._instance
+
+    @classmethod
+    def close(cls):
+        """Close the shared SSH connection when done."""
+        if cls._instance:
+            cls._instance.close()
+            logging.info("SSH connection closed")
+            append("CLOSE")  # Your legacy logging
+            cls._instance = None
+
+# ---------- SSH client (updated to use shared manager) ------------------------
 class MikrotikClient:
     """
     Convenience wrapper around Paramiko for RouterOS CLI access.
@@ -58,6 +84,8 @@ class MikrotikClient:
     Usage:
         with MikrotikClient("192.0.2.1", "admin", "secret") as mt:
             print(mt.cmd("/system identity print"))
+
+    New: Uses shared SSH connection to reuse across the app.
     """
 
     def __init__(self, host: str, user: str, password: str, port: int = 22) -> None:
@@ -65,28 +93,14 @@ class MikrotikClient:
         self.user = user
         self.password = password
         self.port = port
-        self._ssh: Optional[paramiko.SSHClient] = None
+        self._ssh = None  # We'll set this in login using the manager
 
     # ---------------------------------------------------------------- connect
     def login(self) -> None:
-        append(f"LOGIN {self.host}")
-        self._ssh = paramiko.SSHClient()
-        self._ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        self._ssh.connect(
-            hostname=self.host,
-            port=self.port,
-            username=self.user,
-            password=self.password,
-            look_for_keys=False,
-            allow_agent=False,
-            timeout=10,
-        )
+        self._ssh = SSHManager.get_instance(self.host, self.port, self.user, self.password)
 
     def close(self) -> None:
-        if self._ssh:
-            append(f"CLOSE {self.host}")
-            self._ssh.close()
-            self._ssh = None
+        SSHManager.close()  # Close the shared one
 
     # -------------------------------------------------------------- commands
     def execute(self, command: str) -> tuple[str, str]:
