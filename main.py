@@ -1,4 +1,5 @@
 # main.py
+# 123456
 import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow, QTabWidget
 
