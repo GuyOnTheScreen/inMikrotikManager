@@ -16,19 +16,21 @@ from widgets.net_tool_panel import NetToolPanel
 
 __all__ = ["ArpTablePage"]
 
-
 class ArpTablePage(QWidget):
     """
     ARP table viewer + shared Ping/Trace panel + Ping-Net panel.
     Double-clicking an entry fills both panels and auto-looks up the subnet.
     """
 
-    def __init__(self, parent=None):
+    def __init__(self, host: str, username: str, password: str, parent=None):
         super().__init__(parent)
+        self.host = host
+        self.username = username
+        self.password = password
         self._client: Optional[MikrotikClient] = None
 
         # controller for fetching ARP
-        self._controller = ArpController(self)
+        self._controller = ArpController(host, username, password)  # Pass creds; removed 'self'
         self._controller.arpReady.connect(self._populate_table)
 
         self._build_ui()
